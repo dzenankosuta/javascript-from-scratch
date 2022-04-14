@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers as Objects</title>
+</head>
+
+<body>
+    <h2>JavaScript Numbers</h2>
+
+    <p>Numbers can also be defined as objects with the keyword new:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // x is a number
+        let x = 123;
+
+        // y is a Number object
+        let y = new Number(123);
+
+        document.getElementById("demo").innerHTML = typeof x + "<br>" + typeof y;
+    </script>
+</body>
+
+</html>
