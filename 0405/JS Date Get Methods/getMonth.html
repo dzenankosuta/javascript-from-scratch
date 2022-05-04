@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getMonth() method</title>
+</head>
+
+<body>
+    <h2>JavaScript getMonth()</h2>
+    <p>The getMonth() method returns the month as a number.</p>
+
+    <p><strong>Note: </strong>In JavaScript, the first month (January) is month number 0, so December returns month
+        number 11.</p>
+    <p>You can use an array to display the name of the month:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        const d = new Date();
+        let month = months[d.getMonth()];
+        document.getElementById("demo").innerHTML = month;
+    </script>
+</body>
+
+</html>
