@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+
+<body>
+    <h2>JavaScript Booleans</h2>
+
+    <p align='center'>Everything Without a "Value" is False.</p>
+
+    <p>The Boolean value of 0 (zero) is false.</p>
+    <p>The Boolean value of -0 (minus zero) is false.</p>
+    <p>The Boolean value of "" (empty string) is false.</p>
+    <p>The Boolean value of undefined is false.</p>
+    <p>The Boolean value of null is false.</p>
+    <p>The Boolean value of false is (you guessed it) false.</p>
+    <p>The Boolean value of NaN is false.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let x = 0;
+        document.getElementById("demo").innerHTML = Boolean(x);
+    </script>
+</body>
+
+</html>
