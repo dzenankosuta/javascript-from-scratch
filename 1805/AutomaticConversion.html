@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Type Conversion</title>
+</head>
+
+<body>
+    <h2>JavaScript Automatic Type Conversion</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML =
+            (5 + null) + "<br>" +     // returns 5         because null is converted to 0
+            ("5" + null) + "<br>" +   // returns "5null"   because null is converted to "null"
+            ("5" + 2) + "<br>" +      // returns "52"      because 2 is converted to "2"
+            ("5" - 2) + "<br>" +      // returns 3         because "5" is converted to 5
+            ("5" * "2") + "<br>" +    // returns 10        because "5" and "2" are converted to 5 and 2
+            ("5" / "2") + "<br>"      // returns 2.5       because "5" and "2" are converted to 5 and 2
+    </script>
+
+</body>
+
+</html>
