@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Hoisting</title>
+</head>
+
+<body>
+    <h1>JavaScript Hoisting</h1>
+    <p>In JavaScript, a variable can be declared after it has been used.</p>
+    <p>In other words; a variable can be used before it has been declared.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        x = 5; // Assign 5 to x
+
+        elem = document.getElementById("demo");   // Find an element 
+        elem.innerHTML = x;                       // Display x in the element
+
+        var x; // Declare x
+    </script>
+</body>
+
+</html>
