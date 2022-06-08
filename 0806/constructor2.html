@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Constructors (2)</title>
+</head>
+
+<body>
+    <h2>JavaScript Object Constructors</h2>
+
+    <p>The property will be added to myFather. Not to myMother. (Not to any other person objects).</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        // Create 2 Person objects
+        const myFather = new Person("John", "Doe", 50, "blue");
+        const myMother = new Person("Sally", "Rally", 48, "green");
+
+        // Add nationality to first object
+        myFather.nationality = "English";
+
+        // Display nationality 
+        document.getElementById("demo").innerHTML =
+            "My father is " + myFather.nationality; 
+    </script>
+</body>
+
+</html>
