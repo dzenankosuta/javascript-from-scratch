@@ -1,0 +1,47 @@
+Static metode u JavaScriptu su metode koje se mogu pozivati direktno na klasi, bez potrebe za kreiranjem objekta klase. 
+Ovo ih razlikuje od instance metoda, koje se pozivaju na objektima koji su kreirani na osnovu klase.
+
+Postoji nekoliko razloga zašto biste koristili statičke metode unutar klase u JavaScriptu:
+
+Pristupanje podacima klase: Ako želite pristupiti podacima klase, ali ne želite kreirati objekt klase,
+ možete koristiti statičku metodu. 
+Na primer, ako imate klasu koja sadrži konstante koje se koriste u različitim delovima vašeg koda, 
+možete koristiti statičku metodu za pristup tim konstantama bez kreiranja objekta klase.
+
+javascript
+
+class Constants {
+  static PI = 3.14;
+  
+  static getPi() {
+    return Constants.PI;
+  }
+}
+
+console.log(Constants.getPi()); // 3.14
+Deljenje funkcionalnosti: Ako želite da delite funkcionalnost između svih objekata kreiranih na osnovu klase, 
+možete koristiti statičku metodu. Na primer, ako imate klasu koja obrađuje neki tip podataka, 
+možete kreirati statičku metodu koja vrši validaciju tog tipa podataka i pozvati je iz različitih delova vašeg koda.
+
+javascript
+
+
+class DataProcessor {
+  static isValid(data) {
+    // Validacija podataka
+  }
+  
+  processData(data) {
+    if (!DataProcessor.isValid(data)) {
+      throw new Error('Invalid data');
+    }
+    
+    // Procesiranje podataka
+  }
+}
+
+Performanse: 
+Korišćenje statičkih metoda može poboljšati performanse vašeg koda, posebno ako se metode pozivaju mnogo puta. 
+Korišćenjem statičkih metoda izbegava se kreiranje novih objekata svaki put kada se metoda pozove.
+Ukratko, koristite statičke metode kada želite pristupiti podacima klase, 
+deliti funkcionalnost između svih objekata kreiranih na osnovu klase ili poboljšati performanse vašeg koda.
