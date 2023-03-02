@@ -1,0 +1,54 @@
+Nasleđivanje omogućava kreiranje nove klase na osnovu postojeće klase, čime se izbegava ponavljanje koda i olakšava održavanje programa.
+
+Evo jednog jednostavnog primera nasleđivanja u JavaScriptu:
+
+javascript
+
+class Osoba {
+  constructor(ime, prezime) {
+    this.ime = ime;
+    this.prezime = prezime;
+  }
+
+  pozdrav() {
+    console.log(`Pozdrav, ${this.ime} ${this.prezime}!`);
+  }
+}
+
+class Student extends Osoba {
+  constructor(ime, prezime, brojIndeksa) {
+    super(ime, prezime);
+    this.brojIndeksa = brojIndeksa;
+  }
+
+  prijaviIspit(predmet) {
+    console.log(`${this.ime} ${this.prezime} je prijavio ispit iz predmeta ${predmet}.`);
+  }
+}
+
+let student = new Student('Marko', 'Markovic', '12345');
+
+student.pozdrav(); // Pozdrav, Marko Markovic!
+student.prijaviIspit('Matematika'); // Marko Markovic je prijavio ispit iz predmeta Matematika.
+
+
+U ovom primeru, Student klasa nasleđuje Osoba klasu korišćenjem ključne reči extends. 
+To znači da Student klasa ima sve osobine i metode koje ima Osoba klasa, plus dodatne osobine
+ i metode koje definira sama klasa.
+
+U konstruktoru klase Student, vidite da se prvo poziva super(ime, prezime) kako bi se pozvao konstruktor klase Osoba 
+i inicijalizovali ime i prezime osobine. Zatim se inicijalizuje brojIndeksa.
+
+U klasi Student, dodali smo novu metodu prijaviIspit, koja prikazuje poruku o tome koji predmet student prijavljuje.
+
+Kada instanciramo objekat student i pozovemo prijaviIspit i pozdrav, primetite da se pozdrav metoda poziva iz 
+Osoba klase, dok se prijaviIspit poziva iz Student klase.
+
+Super metoda se koristi za pozivanje metoda klase iz koje se vrši nasleđivanje. 
+U ovom primeru, super metoda se koristi u konstruktoru klase Student kako bi se pozvao konstruktor klase Osoba. 
+Super metoda može se koristiti i za pozivanje metoda klase iz koje se vrši nasleđivanje.
+
+U nasleđenoj metodi, super metoda se može koristiti za pozivanje metode iz klase iz koje se vrši nasleđivanje. 
+Na primer, ako klasa Osoba ima metodu pozdrav, a klasa Student nasleđuje tu metodu,
+ možemo koristiti super metodu kako bismo pozvali originalnu pozdrav metodu iz `Osoba
+
