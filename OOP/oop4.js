@@ -1,10 +1,12 @@
 class Osoba {
+  #ime;
+  #prezime;
   constructor(ime, prezime) {
     this.#ime = ime;
     this.#prezime = prezime;
   }
 
-  pozdrav() {
+  get pozdrav() {
     console.log(`Pozdrav, ${this.#ime} ${this.#prezime}!`);
   }
 }
@@ -12,3 +14,4 @@ class Osoba {
 const haris = new Osoba("Haris", "Muslic");
 
 console.log(haris.pozdrav);
+// console.log(haris.#ime);
