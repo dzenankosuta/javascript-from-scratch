@@ -1,0 +1,79 @@
+Kreiranje objekta sa svojstvima i metodama:
+
+javascript
+
+const osoba = {
+  ime: "Ana",
+  prezime: "Anić",
+  godine: 25,
+  dobrodosli: function() {
+    console.log("Dobrodošli, ja sam " + this.ime + " " + this.prezime + "!");
+  },
+  rodjendan: function() {
+    this.godine++;
+  }
+};
+
+osoba.dobrodosli(); // ispisuje "Dobrodošli, ja sam Ana Anić!"
+console.log(osoba.godine); // ispisuje 25
+osoba.rodjendan();
+console.log(osoba.godine); // ispisuje 26
+
+Konstruktori i nasleđivanje:
+javascript
+
+function Osoba(ime, prezime, godine) {
+  this.ime = ime;
+  this.prezime = prezime;
+  this.godine = godine;
+}
+
+Osoba.prototype.dobrodosli = function() {
+  console.log("Dobrodošli, ja sam " + this.ime + " " + this.prezime + "!");
+};
+
+function Student(ime, prezime, godine, fakultet) {
+  Osoba.call(this, ime, prezime, godine);
+  this.fakultet = fakultet;
+}
+
+Student.prototype = Object.create(Osoba.prototype);
+Student.prototype.constructor = Student;
+Student.prototype.poloziIspit = function() {
+  console.log("Položio sam ispit!");
+};
+
+const student = new Student("Ana", "Anić", 20, "Fakultet računarstva");
+student.dobrodosli(); // ispisuje "Dobrodošli, ja sam Ana Anić!"
+console.log(student.fakultet); // ispisuje "Fakultet računarstva"
+student.poloziIspit(); // ispisuje "Položio sam ispit!"
+
+Privatne metode i svojstva uz pomoć zatvaranja:
+javascript
+
+function Osoba(ime, prezime, godine) {
+  this.ime = ime;
+  this.prezime = prezime;
+  this.godine = godine;
+
+  let bankovniRacun = 0;
+
+  function dodajNaRacun(iznos) {
+    bankovniRacun += iznos;
+  }
+
+  this.stanjeRacuna = function() {
+    return bankovniRacun;
+  };
+
+  this.uplati = function(iznos) {
+    dodajNaRacun(iznos);
+    console.log("Uplaćeno " + iznos + " kuna.");
+  };
+}
+
+
+const osoba = new Osoba("Ana", "Anić", 30);
+console.log(osoba.stanjeRacuna()); // ispisuje 0
+osoba.uplati(100);
+console.log(osoba.stanjeRacuna()); // ispisuje 100

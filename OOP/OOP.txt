@@ -48,3 +48,35 @@ Ovaj primer je jednostavan, ali OOP u JavaScriptu može biti mnogo složeniji.
 Na primer, možete imati više klasa koje nasleđuju jedna od druge, ili 
 možete koristiti OOP za upravljanje kompleksnijim aplikacijama.
 
+// class Product {
+// //   title = "Default";
+// //   imageUrl;
+// //   description;
+// //   price;
+
+//   //   myFunc() {}
+//   constructor(title, image, desc, price) {
+//     this.title = title;
+//     this.imageUrl = image;
+//     this.description = desc;
+//     this.price = price;
+//   }
+// }
+
+class Product {
+  constructor(title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }
+}
+
+const myProd = new Product();
+console.log(myProd);
+
+// Also possible:"
+// myProd.description = "The best product in the world";
+
+const myProd2 = new Product("Tepih", "../../../", "Nema bolji", 130);
+console.log(myProd2);
