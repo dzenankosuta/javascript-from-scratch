@@ -1,0 +1,50 @@
+Objektno orijentisano programiranje (OOP) je paradigma programiranja u kojoj se programiranje bazira
+ na objektima koji komuniciraju jedni s drugima kako bi izvršili neku funkciju. 
+U JavaScriptu, OOP se može postići korišćenjem klase i objekata.
+
+Klasa u JavaScriptu je predstavljena kao funkcija, a objekat je instanca te klase. 
+Kada se instancira objekat, on dobija svoje sopstvene osobine i metode koje su definisane u klasi. 
+Klasa može biti nasleđena od druge klase, a objekat može biti instanciran iz ove podklase.
+
+Evo jednog jednostavnog primera kako se koristi OOP u JavaScriptu:
+
+javascript
+
+// Kreiranje klase Osoba
+
+class Osoba {
+  constructor(ime, prezime, godine) {
+    this.ime = ime;
+    this.prezime = prezime;
+    this.godine = godine;
+  }
+
+  // Metoda koja vraća celo ime osobe
+  celoIme() {
+    return `${this.ime} ${this.prezime}`;
+  }
+
+  // Metoda koja vraća broj godina osobe
+  brojGodina() {
+    return this.godine;
+  }
+}
+
+
+// Kreiranje instance klase Osoba
+
+let osoba = new Osoba('Marko', 'Markovic', 30);
+
+// Pozivanje metoda na instanci klase Osoba
+console.log(osoba.celoIme()); // 'Marko Markovic'
+console.log(osoba.brojGodina()); // 30
+U ovom primeru kreiramo klasu Osoba koja ima tri osobine: ime, prezime i godine. 
+Ova klasa takođe ima dve metode: celoIme koja vraća celo ime osobe i brojGodina koja vraća broj godina osobe.
+
+Nakon toga, instanciramo objekat osoba iz klase Osoba i dodeljujemo vrednosti osobinama.
+Kada pozovemo metode celoIme i brojGodina na ovom objektu, one vraćaju odgovarajuće vrednosti.
+
+Ovaj primer je jednostavan, ali OOP u JavaScriptu može biti mnogo složeniji. 
+Na primer, možete imati više klasa koje nasleđuju jedna od druge, ili 
+možete koristiti OOP za upravljanje kompleksnijim aplikacijama.
+
